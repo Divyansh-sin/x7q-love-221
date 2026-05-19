@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Quiz for You 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Decorative petals background -->
+  <div class="petal-bg" id="petalBg"></div>
+
+  <!-- Floating hearts -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- ══════════════ START SCREEN ══════════════ -->
+  <div class="screen active" id="startScreen">
+    <div class="start-card">
+      <div class="start-ornament top-ornament">✦ ✦ ✦</div>
+      <div class="start-badge">
+      <span>a little something</span>
+      <span class="badge-divider">✦</span>
+      <span>A quiz made just for you</span>
+</div>
+
+<h1 class="start-title">Ready?<br><span class="start-emoji">😏</span></h1>
+      <button class="btn-start" id="startBtn" onclick="startQuiz()">
+        <span>Let's go</span>
+        <div class="btn-shine"></div>
+      </button>
+      <div class="start-ornament bottom-ornament">· · ·</div>
+    </div>
+  </div>
+
+  <!-- ══════════════ QUIZ SCREEN ══════════════ -->
+  <div class="screen" id="quizScreen">
+    <div class="quiz-wrap">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+        <span class="progress-label" id="progressLabel">1 / 4</span>
+      </div>
+
+      <div class="question-card" id="questionCard">
+        <div class="question-decoration"></div>
+        <p class="question-text" id="questionText"></p>
+        <img class="question-img" id="questionImg" src="" alt="math question" />
+        <div class="options-grid" id="optionsGrid"></div>
+      </div>
+    </div>
+
+    <!-- Wrong answer popup -->
+    <div class="wrong-popup" id="wrongPopup">
+      <span>Wrong 😭 try again</span>
+    </div>
+
+    <!-- Correct answer cookie popup -->
+    <div class="cookie-popup" id="cookiePopup">
+      <div class="cookie-inner">
+        <span class="cookie-emoji">🍪</span>
+        <span class="cookie-text">here's a cookie for your dumbass</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ COUNTDOWN SCREEN ══════════════ -->
+  <div class="screen" id="countdownScreen">
+    <div class="countdown-wrap">
+      <p class="countdown-label">get ready...</p>
+      <div class="countdown-number" id="countdownNumber">3</div>
+    </div>
+  </div>
+
+  <!-- ══════════════ OBIWAN REVEAL SCREEN ══════════════ -->
+  <div class="screen" id="obiwanScreen">
+    <div class="reveal-card">
+      <div class="reveal-header">I like him...</div>
+      <div class="reveal-img-wrap">
+        <img src="images/obiwan.jpg" alt="Obi-Wan" class="reveal-img" id="obiwanImg" />
+        <div class="reveal-img-glow"></div>
+      </div>
+      <button class="btn-continue" onclick="goToTroll()">
+        Continue 😏
+        <div class="btn-shine"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════ TROLL SCREEN ══════════════ -->
+  <div class="screen" id="trollScreen">
+    <div class="troll-card">
+      <div class="troll-img-wrap">
+        <img src="images/obiwan.jpg" alt="Still Obi-Wan" class="reveal-img" />
+        <div class="reveal-img-glow pink-glow"></div>
+      </div>
+      <h2 class="troll-title">It's still him you dumbass 💀</h2>
+      <p class="troll-sub">What did you think?</p>
+      <div class="countdown-timer" id="timerWrap" style="display: none;">
+         <span id="timerCount">5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ FINAL SCREEN ══════════════ -->
+  <div class="screen" id="finalScreen">
+    <div class="final-bg" id="finalBg">
+      <img src="images/background.png" alt="collage" class="final-bg-img" />
+    </div>
+    <div class="final-content">
+      <div class="final-card">
+
+  <div class="final-sparkle" id="finalSparkle">✦</div>
+
+  <div class="final-message">
+
+    <p class="final-static-text">
+      Just kidding ❤️🤍🩷
+      <br>
+      It's YOU,
+      <br>
+      You dumbass 😜🤪
+    </p>
+
+    <img src="images/random.jpeg" alt="random image" class="final-extra-img">
+
+  </div>
+
+</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
